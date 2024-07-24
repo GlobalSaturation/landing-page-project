@@ -1,19 +1,35 @@
+/* Initallize variables */
 :root {
   --text-color: #F9FAF8;
   --background-color: #1F2937;
   --primary-color: #3882F6;
   --secondary-color: #E5E7EB;
+
+  --font-18: 1.125rem;
+  --font-24: 1.5rem;
+  --font-36: 2.25rem;
+  --font-48: 3rem;
 }
 
-body {
+* {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Center align text when screen gets smaller */
+@media(max-width: 1100px) {
+  * {
+    text-align: center;
+  }
+}
+
+/* #region base sections */
 .top {
-  color: var(--secondary-color);
+  color: var(--text-color);
   background-color: var(--background-color);
+  padding-bottom: 100px;
 }
 
 .lower {
@@ -23,23 +39,23 @@ body {
 .footer {
   background-color: var(--background-color);
 }
+/* #endregion */
 
+/* #region Top content */
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
-  padding: 15px;
+  margin-top: 15px;
 }
 
 .header div {
-  font-size: 1.5rem;
+  font-size: var(--font-24);
   font-weight: bold;
 }
 
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 1.3rem;
 }
@@ -47,4 +63,66 @@ ul {
 a {
   text-decoration: none;
   color: var(--secondary-color);
+  font-size: var(--font-18);
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+/* This is the flexbox that controls the max width
+of all top content */
+.top-container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: 0 auto; /* Horizontally center */
+  gap: 100px;
+}
+
+.welcome-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* This is center aligned so that the placeholder
+  image wraps to the center when the screen is small */
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-text {
+  flex: 1 1 400px;
+  padding-right: 1rem; /* Keeps space between text and picture */
+}
+
+.welcome-text h1 {
+  font-size: var(--font-48);
+  font-weight: bolder;
+}
+
+.welcome-text p {
+  color: var(--secondary-color);
+  font-size: var(--font-18);
+  margin-bottom: 12px;
+}
+
+.image-placehold {
+  background-color: gray;
+  padding: 90px 150px;
+}
+/* #endregion */
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: var(--font-18);
+  font-weight: bold;
+  padding: 0.6rem 2.2rem;
+  border: none;
+  border-radius: 7px;
+  margin-bottom: 12px;
+}
+
+button:hover {
+  background-color: var(--text-color);
+  color: var(--primary-color);
 }
