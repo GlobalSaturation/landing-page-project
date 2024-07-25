@@ -23,8 +23,9 @@
 /* #region base sections */
 .top {
   color: var(--text-color);
-  background-color: var(--background-color);
-  padding-bottom: var(--section-spacing);
+  background: linear-gradient( to bottom,
+    #1F2937 60%, #485961);
+  padding-bottom: 70px;
 }
 
 .middle {
@@ -78,7 +79,7 @@ of all top content */
   flex-direction: column;
   width: 80vw;
   margin: 0 auto; /* Horizontally center */
-  gap: var(--section-spacing);
+  gap: 70px;
 }
 
 .welcome-container {
