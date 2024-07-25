@@ -20,13 +20,6 @@
   box-sizing: border-box;
 }
 
-/* Center align text when screen gets smaller */
-@media(max-width: 1170px) {
-  * {
-    text-align: center;
-  }
-}
-
 /* #region base sections */
 .top {
   color: var(--text-color);
@@ -40,6 +33,7 @@
 
 .lower {
   background-color: var(--secondary-color);
+  padding: var(--section-spacing) 0;
 }
 
 .footer {
@@ -131,22 +125,21 @@ of all top content */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
-  --info-width: 150px;/* Used for children */
+  gap: 40px;
+  --info-width: 160px;/* Used for children */
 }
 
 .square {
   flex: 0 0 auto;
   width: var(--info-width);
   height: var(--info-width);
-  border: 2px solid var(--primary-color);
+  border: 4px solid var(--primary-color);
   border-radius: 15px;
   margin-bottom: 5px;
 }
 /* Selects sibling div */
 .square + div {
   width: var(--info-width);
-  text-align: center;
   font-size: var(--font-18);
   color: var(--background-color);
 }
@@ -163,7 +156,48 @@ button {
 }
 /* #endregion */
 
+/* #region Lower content */
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+.item:hover, button:hover {
+  transition: all 100ms linear;
+  transform: scale(1.1);
+}
+
+blockquote {
+  font-weight: light;
+  font-style: italic;
+  font-size: var(--font-36);
+  color: var(--background-color);
+  margin-bottom: 5px;
+}
+
+.quote-container p {
+  font-weight: bold;
+  font-size: var(--font-24);
+  color: var(--background-color);
+  align-self: flex-end;
+}
+/* #endregion */
+
 button:hover {
   background-color: var(--text-color);
   color: var(--primary-color);
+}
+
+/* Change some things when screen gets smaller */
+@media(max-width: 1170px) {
+  .top-container * {
+    text-align: center;
+  }
+
+  blockquote {
+    font-size: var(--font-24);
+  }
 }
