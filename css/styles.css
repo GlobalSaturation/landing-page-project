@@ -88,10 +88,11 @@ of all top content */
   image wraps to the center when the screen is small */
   justify-content: center;
   align-items: center;
+  gap: 0 60px;
 }
 
 .welcome-text {
-  flex: 1 1 400px;
+  flex: 0 1 500px;
   padding-right: 1rem; /* Keeps space between text and picture */
 }
 
@@ -106,9 +107,14 @@ of all top content */
   margin-bottom: 12px;
 }
 
-.image-placehold {
-  background-color: gray;
-  padding: 90px 150px;
+img {
+  height: 350px;
+  width: 450px;
+  flex: 0 1 auto;
+  object-fit: cover;
+  border: 5px solid var(--secondary-color);
+  border-radius: 20px;
+  /* padding: 90px 150px; */
 }
 /* #endregion */
 
@@ -192,7 +198,7 @@ button:hover {
 }
 
 /* Change some things when screen gets smaller */
-@media(max-width: 1170px) {
+@media(max-width: 1260px) {
   .top-container * {
     text-align: center;
   }
