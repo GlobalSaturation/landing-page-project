@@ -37,8 +37,15 @@
   padding: var(--section-spacing) 0;
 }
 
+.bottom {
+  padding: 70px 0;
+}
+
 .footer {
   background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 20px;
 }
 /* #endregion */
 
@@ -151,16 +158,6 @@ img {
   color: var(--background-color);
 }
 
-button {
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  font-size: var(--font-18);
-  font-weight: bold;
-  padding: 0.6rem 2.2rem;
-  border: none;
-  border-radius: 7px;
-  margin-bottom: 20px;
-}
 /* #endregion */
 
 /* #region Lower content */
@@ -193,6 +190,46 @@ blockquote {
 }
 /* #endregion */
 
+/* #region Bottom content */
+.signup-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border-radius: 7px;
+  padding: 30px 50px;
+  margin: auto;
+  width: 70vw;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px 30px;
+}
+
+.signup-container p {
+  flex-shrink: 1;
+}
+
+
+.welcome-text button {
+  margin-bottom: 20px;
+}
+
+.signup-container button {
+  border: 2px solid var(--text-color);
+}
+
+/* #endregion */
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: var(--font-18);
+  font-weight: bold;
+  padding: 0.6rem 2.2rem;
+  border: none;
+  border-radius: 7px;
+}
+
 button:hover {
   background-color: var(--text-color);
   color: var(--primary-color);
@@ -200,7 +237,7 @@ button:hover {
 
 /* Change some things when screen gets smaller */
 @media(max-width: 1260px) {
-  .top-container * {
+  .top-container, .signup-container {
     text-align: center;
   }
 
